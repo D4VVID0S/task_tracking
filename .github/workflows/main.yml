@@ -1,0 +1,35 @@
+name: Export Issues from Project task_tracking
+
+on:
+  workflow_dispatch:  # uruchamiane ręcznie
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install deps
+        run: pip install requests pandas
+
+      - name: Export issues from project view task_tracking
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          OWNER: D4VVID0S
+          REPO: task_tracking
+          PROJECT_NUMBER: 3   # numer projektu, nie nazwa
+          VIEW_NAME: Team capacity
+        run: |
+          python .github/scripts/export_issues.py
+
+      - name: Upload CSV artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: issues-export
+          path: issues_export.csv
