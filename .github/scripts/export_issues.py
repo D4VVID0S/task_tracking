@@ -26,8 +26,8 @@ def extract_duration(body: str) -> str | None:
 
     return None
 
+owner, repo = os.environ["GITHUB_REPOSITORY"].split("/", 1)
 token = os.environ["GH_TOKEN"]
-owner, repo = os.environ["REPO_FULL"].split("/", 1)
 
 headers = {
     "Authorization": f"Bearer {token}",
