@@ -7,7 +7,7 @@ permissions:
   contents: read
   issues: read
   # jeśli chcesz pobierać też pola z ProjectV2 (GraphQL), dodaj:
-  # projects: read
+  projects: read
 
 jobs:
   export:
