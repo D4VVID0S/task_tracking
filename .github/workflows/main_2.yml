@@ -33,7 +33,7 @@ jobs:
           PROJECT_NUMBER: "3"
           PROJECT_OWNER: ${{ github.D4VVID0S }}
         run: |
-          python .github/scripts/export_issues.py
+          python .github/scripts/export_issues_2.py
 
       - name: Upload CSV artifact
         uses: actions/upload-artifact@v4
