@@ -30,8 +30,8 @@ jobs:
           REPO_FULL: ${{ github.repository }} # owner/repo
           # Ustaw to TYLKO jeżeli chcesz dorzucić pola z wybranego ProjectV2:
           # PROJECT_OWNER może być tą samą organizacją/użytkownikiem co repo (owner)
-          # PROJECT_NUMBER: "1"
-          # PROJECT_OWNER: ${{ github.repository_owner }}
+          PROJECT_NUMBER: "3"
+          PROJECT_OWNER: ${{ github.D4VVID0S }}
         run: |
           python .github/scripts/export_issues.py
 
